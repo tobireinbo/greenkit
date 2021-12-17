@@ -1,0 +1,65 @@
+/*
+----------------------------------------------
+VARIABLES
+----------------------------------------------
+*/
+:root {
+  /* Colors */
+  --gk-c-accent-1: green;
+  --gk-c-accent-1-focus: darkgreen;
+  --gk-c-accent-2: purple;
+  --gk-c-accent-2-focus: red;
+  --gk-c-warn: red;
+  --gk-c-warn-focus: red;
+  --gk-c-hint: yellow;
+  --gk-c-hint-focus: yellow;
+  --gk-c-area-1: white;
+  --gk-c-area-1-focus: white;
+  --gk-c-area-2: lightgray;
+  --gk-c-area-2-focus: white;
+  --gk-c-contour-1: lightgray;
+  --gk-c-contour-1-focus: lightgray;
+  --gk-c-contour-2: darkgray;
+  --gk-c-contour-2-focus: lightgray;
+  --gk-c-text-xs: black;
+  --gk-c-text-s: black;
+  --gk-c-text-m: black;
+  --gk-c-text-l: black;
+  --gk-c-text-xl: black;
+  --gk-c-text-in-accent-1: white;
+  --gk-c-text-in-accent-2: white;
+  --gk-c-text-in-warn: white;
+  --gk-c-text-in-hint: white;
+
+  /* Sizes */
+  --gk-s-text-xs: 13px;
+  --gk-s-text-s: 16px;
+  --gk-s-text-m: 20px;
+  --gk-s-text-l: 30px;
+  --gk-s-text-xl: 60px;
+
+  --gk-s-spacing-s: 8px;
+  --gk-s-spacing-m: 14px;
+  --gk-s-spacing-l: 30px;
+  --gk-s-spacing-xl: 50px;
+
+  --gk-s-s: 10px;
+  --gk-s-m: 20px;
+  --gk-s-l: 40px;
+  --gk-s-xl: 60px;
+
+  --gk-s-dimesion-s: 200px;
+  --gk-s-dimesion-m: 400px;
+  --gk-s-dimesion-l: 800px;
+  --gk-s-dimesion-xl: 1200px;
+
+  --gk-s-radius-s: 2px;
+  --gk-s-radius-m: 4px;
+  --gk-s-radius-l: 10px;
+  --gk-s-radius-xl: 15px;
+
+  /* Transitions */
+  --gk-t-fast: 0.3s ease;
+  --gk-t-normal: 0.5s ease;
+  --gk-t-slow: 0.8s ease;
+}
