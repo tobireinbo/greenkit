@@ -1,14 +1,17 @@
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { GreenkitComponent } from "./GreenkitComponent";
+import { GreenkitComponent } from "../common/GreenkitComponent";
 
-@customElement("gk-sec")
+@customElement("gk-section")
 export class Section extends GreenkitComponent {
   @property()
   direction?: "x" | "y" = "y";
 
   render() {
-    return html`<div class="${this.direction === "x" ? "flx" : "flx-v"} gap-m">
+    return html`<div
+      class="${this.direction === "x" ? "flx" : "flx-v"} gap${this
+        .direction}-${this.size}"
+    >
       <slot></slot>
     </div>`;
   }
@@ -16,6 +19,6 @@ export class Section extends GreenkitComponent {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "gk-sec": Section;
+    "gk-section": Section;
   }
 }

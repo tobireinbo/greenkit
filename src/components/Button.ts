@@ -1,17 +1,28 @@
 import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { GreenkitComponent } from "./GreenkitComponent";
+import { GreenkitComponent } from "../common/GreenkitComponent";
+import { decrementSize } from "../common/helper";
 
 @customElement("gk-btn")
 export class Button extends GreenkitComponent {
   @property({ type: Boolean })
+  invert: boolean = false;
+
   render() {
-    return html`<button
-      class="bg-acc-1 p-${this.size} ${this.floating ? "sdw-1" : ""} br-r-${this
-        .size} t-${this.size} click pointer"
-    >
+    return html`<button class=${this.constructClass()}>
       <slot></slot>
     </button>`;
+  }
+
+  protected constructClass(): string {
+    const output = `py-${decrementSize(this.size)} br-${this.variant} t-${
+      this.size
+    } px-${this.size}  br-r-${this.size} click pointer`;
+    if (this.invert) {
+      return `bg-1_hvr ${output} t-c-${this.variant}  `;
+    } else {
+      return `bg-${this.variant}_hvr  ${output} `;
+    }
   }
 }
 

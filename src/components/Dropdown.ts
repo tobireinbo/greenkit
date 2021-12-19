@@ -1,7 +1,7 @@
 import { html, TemplateResult } from "lit";
 import { property, customElement } from "lit/decorators.js";
+import { GreenkitComponent } from "../common/GreenkitComponent";
 import { DisplayValue } from "../common/types";
-import { GreenkitComponent } from "./GreenkitComponent";
 
 @customElement("gk-dropdown")
 export class Dropdown extends GreenkitComponent {
@@ -67,7 +67,7 @@ export class Dropdown extends GreenkitComponent {
   }
 
   render() {
-    return html`<div class="rel z-2">
+    return html`<div class="rel z-2" @click=${() => (this.open = true)}>
       <input
         class="p-${this.size} t-${this.size} ${this.open
           ? `br-rt-${this.size}`
@@ -77,7 +77,6 @@ export class Dropdown extends GreenkitComponent {
         placeholder="${this.selection?.display || ""}"
         .value="${this.searchTerm}"
         @input=${this.handleSearchInput}
-        @click=${() => (this.open = true)}
       />
       ${this.renderOptionsList()}
     </div>`;
@@ -120,7 +119,10 @@ export class Dropdown extends GreenkitComponent {
         : ""}  pointer ${isSelected
         ? `bg-${this.variant}-focus`
         : `bg-${this.variant}_hvr`}"
-      @click=${(e: Event) => this._dispatchOptionSelect(e, option)}
+      @click=${(e: Event) => {
+        e.stopPropagation();
+        this._dispatchOptionSelect(e, option);
+      }}
     >
       ${option.display}
     </div>`;

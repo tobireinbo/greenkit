@@ -7,9 +7,9 @@ export class GreenkitComponent extends LitElement {
   static styles = [globalCss];
 
   @property()
-  size?: Size = "m";
+  size: Size = "m";
   @property()
-  variant?: Variant = "1";
+  variant: Variant = "1";
   @property({ type: Boolean })
   floating?: boolean = false;
 }

@@ -918,25 +918,56 @@ CLASSES
   .gapx-s > * + * {
     margin-left: var(--gk-s-spacing-s);
   }
+  .gapx-s ::slotted(*:not(:first-child)) {
+    margin-left: var(--gk-s-spacing-s);
+  }
+
   .gapx-m > * + * {
     margin-left: var(--gk-s-spacing-m);
   }
+  .gapx-m ::slotted(*:not(:first-child)) {
+    margin-left: var(--gk-s-spacing-m);
+  }
+
   .gapx-l > * + * {
     margin-left: var(--gk-s-spacing-l);
   }
+  .gapy-l ::slotted(*:not(:first-child)) {
+    margin-left: var(--gk-s-spacing-l);
+  }
+
   .gapx-xl > * + * {
     margin-left: var(--gk-s-spacing-xl);
   }
+  .gapx-xl ::slotted(*:not(:first-child)) {
+    margin-left: var(--gk-s-spacing-xl);
+  }
+
   .gapy-s > * + * {
     margin-top: var(--gk-s-spacing-s);
   }
+  .gapy-s ::slotted(*:not(:first-child)) {
+    margin-top: var(--gk-s-spacing-s);
+  }
+
   .gapy-m > * + * {
     margin-top: var(--gk-s-spacing-m);
   }
+  .gapy-m ::slotted(*:not(:first-child)) {
+    margin-top: var(--gk-s-spacing-m);
+  }
+
   .gapy-l > * + * {
     margin-top: var(--gk-s-spacing-l);
   }
+  .gapy-l ::slotted(*:not(:first-child)) {
+    margin-top: var(--gk-s-spacing-l);
+  }
+
   .gapy-xl > * + * {
+    margin-top: var(--gk-s-spacing-xl);
+  }
+  .gapy-xl ::slotted(*:not(:first-child)) {
     margin-top: var(--gk-s-spacing-xl);
   }
 `;
