@@ -1,17 +1,9 @@
-import { LitElement, html } from "lit";
-import { property, customElement } from "lit/decorators.js";
-import { Size, Variant } from "../common/types";
-import globalCss from "../globalCss.js";
+import { html } from "lit";
+import { customElement } from "lit/decorators.js";
+import { GreenkitComponent } from "./GreenkitComponent";
 
 @customElement("gk-card")
-export class Card extends LitElement {
-  static styles = [globalCss];
-
-  @property()
-  size?: Size = "m";
-  @property()
-  variant?: Variant = "1";
-
+export class Card extends GreenkitComponent {
   render() {
     return html`<div
       class="p-${this.size} t-${this.size} br-1 flx-v gapy-${this

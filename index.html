@@ -7,21 +7,18 @@
     <link rel="stylesheet" type="text/css" href="variables.css" />
     <link />
     <script type="module" src="/src/index.ts"></script>
-    <script
-      defer
-      src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"
-    ></script>
   </head>
   <body>
-    <gk-card variant="2">
-      <gk-t size="xl">Hello World</gk-t>
-    </gk-card>
-    <i class="fas fa-user"></i>
+    <gk-sec>
+      <gk-card variant="2">
+        <gk-t size="xl">Hello World</gk-t>
+      </gk-card>
 
-    <div style="width: 300px; margin-top: 20px">
       <gk-t size="s" id="dropdown-selected">selected option: </gk-t>
-      <gk-dropdown searchable size="m" variant="1" id="dropdown" />
-    </div>
+      <gk-dropdown searchable size="m" variant="1" id="dropdown"></gk-dropdown>
+      <gk-btn size="m" floating shine>Pay Now</gk-btn>
+    </gk-sec>
+
     <script>
       const dropdown = document.getElementById("dropdown");
       dropdown.options = [

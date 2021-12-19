@@ -586,7 +586,7 @@ CLASSES
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
   }
   .sdw-shine {
-    box-shadow: inset 2px 1px 1px 0 hsla(0, 0%, 100%, 0.61);
+    box-shadow: inset 1px 1px 1px 0 hsla(0, 0%, 100%, 0.61);
   }
 
   /* Background */

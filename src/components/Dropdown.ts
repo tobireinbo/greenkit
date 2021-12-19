@@ -1,20 +1,14 @@
-import { LitElement, html, TemplateResult } from "lit";
+import { html, TemplateResult } from "lit";
 import { property, customElement } from "lit/decorators.js";
-import { DisplayValue, Size, Variant } from "../common/types";
-import globalCss from "../globalCss.js";
+import { DisplayValue } from "../common/types";
+import { GreenkitComponent } from "./GreenkitComponent";
 
 @customElement("gk-dropdown")
-export class Dropdown extends LitElement {
+export class Dropdown extends GreenkitComponent {
   static EVENTS = {
     optionClick: "optionClick",
     selectionChange: "selectionChange",
   };
-  static styles = [globalCss];
-
-  @property()
-  size?: Size = "m";
-  @property()
-  variant?: Variant = "1";
 
   @property()
   options?: DisplayValue[] = [];
@@ -73,7 +67,7 @@ export class Dropdown extends LitElement {
   }
 
   render() {
-    return html`<div class="rel">
+    return html`<div class="rel z-2">
       <input
         class="p-${this.size} t-${this.size} ${this.open
           ? `br-rt-${this.size}`
@@ -94,8 +88,8 @@ export class Dropdown extends LitElement {
       return html`
         <div
           style="animation: 0.1s ease scale_blend_in_y"
-          class="flx-v w-full brb-${this.variant} pt-${this.size} pb-${this
-            .size} brr-${this.variant} brl-${this
+          class="flx-v w-full bg-${this.variant} brb-${this.variant} pt-${this
+            .size} pb-${this.size} brr-${this.variant} brl-${this
             .variant} abs sdw-1 hmax-m ovfly-a br-rb-${this.size}"
         >
           ${this.options
