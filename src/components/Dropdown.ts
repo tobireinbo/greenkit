@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, TemplateResult } from "lit";
 import { property, customElement } from "lit/decorators.js";
 import { DisplayValue, Size, Variant } from "../common/types";
 import globalCss from "../globalCss.js";
@@ -22,6 +22,8 @@ export class Dropdown extends LitElement {
   searchable?: boolean = false;
   @property({ type: Boolean })
   closeOnSelect?: boolean = true;
+  @property({ type: Boolean })
+  excludeSelected?: boolean = false;
 
   @property({ type: Boolean })
   open = false;
@@ -32,9 +34,11 @@ export class Dropdown extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    //register Outside Click handler
     window.addEventListener("click", this._handleOutsideClick);
   }
   disconnectedCallback() {
+    //remove Outside Click handler
     window.removeEventListener("click", this._handleOutsideClick);
     super.disconnectedCallback();
   }
@@ -60,58 +64,71 @@ export class Dropdown extends LitElement {
     this.dispatchEvent(new CustomEvent(Dropdown.EVENTS.optionClick, options));
   }
 
-  handleSearchInput(e: any) {
+  protected handleSearchInput(e: any) {
     this.searchTerm = e.target.value;
   }
 
-  handleSearchChange(e: any) {
+  protected handleSearchChange(e: any) {
     this.searchTerm = e.target.value;
   }
 
   render() {
-    return html`<div
-      class="br-${this.variant} rel bg-${this.variant}"
-      @click=${() => (this.open = true)}
-    >
+    return html`<div class="rel">
       <input
-        class="p-${this.size} t-${this.size} w-full"
+        class="p-${this.size} t-${this.size} ${this.open
+          ? `br-rt-${this.size}`
+          : `br-r-${this.size}`}  br-${this.variant} w-full bg-${this.variant}"
         type="text"
         ?disabled=${!this.searchable}
         placeholder="${this.selection?.display || ""}"
         .value="${this.searchTerm}"
         @input=${this.handleSearchInput}
+        @click=${() => (this.open = true)}
       />
+      ${this.renderOptionsList()}
+    </div>`;
+  }
 
-      ${this.open
-        ? html`
-            <div
-              class="flx-v br-${this
-                .variant} abs sdw-1 hmax-m ovfly-a br-rb-${this.size}"
-            >
-              ${this.options
-                ? this.options
-                    .filter((option) =>
-                      option.value
-                        .toLowerCase()
-                        .includes(this.searchTerm?.toLowerCase() || "")
-                    )
-                    .map((option) => {
-                      const isSelected = this.selection === option;
-                      return html`<div
-                        class="p-${this.size} t-${this
-                          .size} pointer ${isSelected
-                          ? `bg-${this.variant}-focus`
-                          : `bg-${this.variant}_hvr`}"
-                        @click=${(e: Event) =>
-                          this._dispatchOptionSelect(e, option)}
-                      >
-                        ${option.display}
-                      </div>`;
-                    })
-                : null}
-            </div>
-          `
-        : null}
+  protected renderOptionsList(): TemplateResult | null {
+    if (this.open) {
+      return html`
+        <div
+          style="animation: 0.1s ease scale_blend_in_y"
+          class="flx-v w-full brb-${this.variant} pt-${this.size} pb-${this
+            .size} brr-${this.variant} brl-${this
+            .variant} abs sdw-1 hmax-m ovfly-a br-rb-${this.size}"
+        >
+          ${this.options
+            ? this.options
+                .filter((option) =>
+                  option.display
+                    .toLowerCase()
+                    .includes(this.searchTerm?.toLowerCase() || "")
+                )
+                .map((option) => this.renderOption(option))
+            : null}
+        </div>
+      `;
+    } else {
+      return null;
+    }
+  }
+
+  protected renderOption(option: DisplayValue): TemplateResult | null {
+    const isSelected = this.selection === option;
+
+    if (isSelected && this.excludeSelected) {
+      return null;
+    }
+    return html`<div
+      class="p-${this.size} t-${this.size} ${isSelected
+        ? "t-c-acc-1"
+        : ""}  pointer ${isSelected
+        ? `bg-${this.variant}-focus`
+        : `bg-${this.variant}_hvr`}"
+      @click=${(e: Event) => this._dispatchOptionSelect(e, option)}
+    >
+      ${option.display}
     </div>`;
   }
 }

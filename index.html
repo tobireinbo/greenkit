@@ -7,10 +7,33 @@
     <link rel="stylesheet" type="text/css" href="variables.css" />
     <link />
     <script type="module" src="/src/index.ts"></script>
+    <script
+      defer
+      src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"
+    ></script>
   </head>
   <body>
     <gk-card variant="2">
       <gk-t size="xl">Hello World</gk-t>
     </gk-card>
+    <i class="fas fa-user"></i>
+
+    <div style="width: 300px; margin-top: 20px">
+      <gk-t size="s" id="dropdown-selected">selected option: </gk-t>
+      <gk-dropdown searchable size="m" variant="1" id="dropdown" />
+    </div>
+    <script>
+      const dropdown = document.getElementById("dropdown");
+      dropdown.options = [
+        { display: "Hallo", value: "hdp2k3d3k2o" },
+        { display: "Test", value: 0 },
+      ];
+
+      dropdown.addEventListener("optionClick", (data) => {
+        document.getElementById(
+          "dropdown-selected"
+        ).innerText = `selected option: ${data.detail.option.display}`;
+      });
+    </script>
   </body>
 </html>

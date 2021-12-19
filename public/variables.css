@@ -5,7 +5,7 @@ VARIABLES
 */
 :root {
   /* Colors */
-  --gk-c-accent-1: green;
+  --gk-c-accent-1: rgb(71, 11, 212);
   --gk-c-accent-1-focus: darkgreen;
   --gk-c-accent-2: purple;
   --gk-c-accent-2-focus: red;
@@ -13,14 +13,14 @@ VARIABLES
   --gk-c-warn-focus: red;
   --gk-c-hint: yellow;
   --gk-c-hint-focus: yellow;
-  --gk-c-area-1: white;
-  --gk-c-area-1-focus: white;
-  --gk-c-area-2: lightgray;
-  --gk-c-area-2-focus: white;
-  --gk-c-contour-1: lightgray;
-  --gk-c-contour-1-focus: lightgray;
-  --gk-c-contour-2: darkgray;
-  --gk-c-contour-2-focus: lightgray;
+  --gk-c-area-1: hsl(0, 0%, 100%);
+  --gk-c-area-1-focus: hsl(0, 0%, 96%);
+  --gk-c-area-2: hsl(0, 0%, 92%);
+  --gk-c-area-2-focus: hsl(0, 0%, 88%);
+  --gk-c-contour-1: hsl(0, 0%, 92%);
+  --gk-c-contour-1-focus: hsl(0, 0%, 88%);
+  --gk-c-contour-2: hsl(0, 0%, 84%);
+  --gk-c-contour-2-focus: hsl(0, 0%, 80%);
   --gk-c-text-xs: black;
   --gk-c-text-s: black;
   --gk-c-text-m: black;

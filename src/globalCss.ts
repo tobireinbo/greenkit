@@ -16,6 +16,19 @@ KEYFRAMES
     }
   }
 
+  @keyframes scale_blend_in_y {
+    0% {
+      opacity: 0;
+      transform-origin: top;
+      transform: scaleY(0);
+    }
+    100% {
+      opacity: 1;
+      transform-origin: top;
+      transform: scaleY(1);
+    }
+  }
+
   /*
 ----------------------------------------------
 NORMALIZE
@@ -581,7 +594,7 @@ CLASSES
     background-color: var(--gk-c-area-1);
   }
   .bg-1-focus {
-    backgorund-color: var(--gk-c-area-1-focus);
+    background-color: var(--gk-c-area-1-focus);
   }
   .bg-1_hvr {
     background-color: var(--gk-c-area-1);
@@ -599,7 +612,7 @@ CLASSES
     background-color: var(--gk-c-area-2);
   }
   .bg-2-focus {
-    backgorund-color: var(--gk-c-area-2-focus);
+    background-color: var(--gk-c-area-2-focus);
   }
   .bg-2_hvr {
     background-color: var(--gk-c-area-2);
