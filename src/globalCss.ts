@@ -934,7 +934,7 @@ CLASSES
   .gapx-l > * + * {
     margin-left: var(--gk-s-spacing-l);
   }
-  .gapy-l ::slotted(*:not(:first-child)) {
+  .gapx-l ::slotted(*:not(:first-child)) {
     margin-left: var(--gk-s-spacing-l);
   }
 

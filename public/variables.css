@@ -63,3 +63,23 @@ VARIABLES
   --gk-t-normal: 0.5s ease;
   --gk-t-slow: 0.8s ease;
 }
+
+@media (max-width: 768px) {
+  :root {
+    --gk-s-spacing-s: 6px;
+    --gk-s-spacing-m: 10px;
+    --gk-s-spacing-l: 24px;
+    --gk-s-spacing-xl: 30px;
+
+    --gk-s-s: 10px;
+    --gk-s-m: 18px;
+    --gk-s-l: 30px;
+    --gk-s-xl: 48px;
+
+    --gk-s-text-xs: 10px;
+    --gk-s-text-s: 12px;
+    --gk-s-text-m: 18px;
+    --gk-s-text-l: 30px;
+    --gk-s-text-xl: 48px;
+  }
+}
