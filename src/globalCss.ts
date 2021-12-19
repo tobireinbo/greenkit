@@ -96,6 +96,7 @@ CLASSES
   .pointer {
     cursor: pointer;
   }
+
   .click {
     overflow: hidden;
     position: relative;
@@ -104,16 +105,17 @@ CLASSES
   }
   .click:after {
     content: "";
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     display: block;
     position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px !important;
+    padding-top: 100%;
+    padding-right: -100%;
+    padding-left: 100%;
     border-radius: 50%;
-    margin-top: -120%;
+    margin-top: -66%;
+    margin-left: -33%;
     opacity: 0;
-    transition: all 0.8s;
+    transition: all 0.5s;
   }
   .click:active:after {
     padding: 0;

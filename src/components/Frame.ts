@@ -10,7 +10,10 @@ export class Frame extends GreenkitComponent {
   render() {
     return html`
       <div class="br-${this.variant} br-r-${this.size} bg-${this.variant}">
-        <div class="p-${this.size} flx-btwn flx-ac brb-${this.variant}">
+        <div
+          class="p-${this.size} gap-${this
+            .size} flx-btwn ovflx-a flx-ac brb-${this.variant}"
+        >
           <gk-t size="${this.size}"> ${this.title} </gk-t>
           <slot name="actions"></slot>
         </div>

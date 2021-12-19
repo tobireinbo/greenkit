@@ -69,7 +69,7 @@ export class Dropdown extends GreenkitComponent {
   render() {
     return html`<div class="rel z-2" @click=${() => (this.open = true)}>
       <input
-        class="p-${this.size} t-${this.size} ${this.open
+        class="p-${this.size} onFocus_br-acc-1 t-${this.size} ${this.open
           ? `br-rt-${this.size}`
           : `br-r-${this.size}`}  br-${this.variant} w-full bg-${this.variant}"
         type="text"
@@ -92,13 +92,7 @@ export class Dropdown extends GreenkitComponent {
             .variant} abs sdw-1 hmax-m ovfly-a br-rb-${this.size}"
         >
           ${this.options
-            ? this.options
-                .filter((option) =>
-                  option.display
-                    .toLowerCase()
-                    .includes(this.searchTerm?.toLowerCase() || "")
-                )
-                .map((option) => this.renderOption(option))
+            ? this.options.map((option) => this.renderOption(option))
             : null}
         </div>
       `;
@@ -110,22 +104,31 @@ export class Dropdown extends GreenkitComponent {
   protected renderOption(option: DisplayValue): TemplateResult | null {
     const isSelected = this.selection === option;
 
-    if (isSelected && this.excludeSelected) {
+    if (
+      option.display
+        .toLowerCase()
+        .includes(this.searchTerm?.toLocaleLowerCase() || "") ||
+      isSelected
+    ) {
+      if (isSelected && this.excludeSelected) {
+        return null;
+      }
+      return html`<div
+        class="p-${this.size} t-${this.size} ${isSelected
+          ? "t-c-acc-1"
+          : ""}  pointer ${isSelected
+          ? `bg-${this.variant}-focus sdw-1 brt-${this.variant} brb-${this.variant} stky top-0 bottom-0`
+          : `bg-${this.variant}_hvr`}"
+        @click=${(e: Event) => {
+          e.stopPropagation();
+          this._dispatchOptionSelect(e, option);
+        }}
+      >
+        ${option.display}
+      </div>`;
+    } else {
       return null;
     }
-    return html`<div
-      class="p-${this.size} t-${this.size} ${isSelected
-        ? "t-c-acc-1"
-        : ""}  pointer ${isSelected
-        ? `bg-${this.variant}-focus`
-        : `bg-${this.variant}_hvr`}"
-      @click=${(e: Event) => {
-        e.stopPropagation();
-        this._dispatchOptionSelect(e, option);
-      }}
-    >
-      ${option.display}
-    </div>`;
   }
 }
 

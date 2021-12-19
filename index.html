@@ -16,7 +16,7 @@
   <body>
     <gk-container size="xl">
       <gk-section>
-        <gk-card variant="2" size="m">
+        <gk-card borderless variant="2" size="m">
           <gk-t size="xl">Hello World</gk-t>
           <gk-t size="m">Lorem Ipsum</gk-t>
         </gk-card>
@@ -57,12 +57,13 @@
 
     <script>
       const dropdown = document.getElementById("dropdown");
-      dropdown.options = [
-        { display: "Hallo", value: "hdp2k3d3k2o" },
-        { display: "Test", value: 0 },
-        { display: "first", value: 1 },
-        { display: "second", value: 2 },
-      ];
+      const options = [{ display: "Hallo", value: "hdp2k3d3k2o" }];
+
+      for (let i = 0; i < 100; i++) {
+        options.push({ display: String(i), value: i });
+      }
+
+      dropdown.options = options;
 
       dropdown.addEventListener("optionClick", (data) => {
         document.getElementById(
