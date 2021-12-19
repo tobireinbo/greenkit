@@ -133,29 +133,29 @@ CLASSES
   }
 
   .wmax-s {
-    max-width: var(--gk-s-dimesion-s);
+    max-width: var(--gk-s-dimension-s);
   }
   .wmax-m {
-    max-width: var(--gk-s-dimesion-m);
+    max-width: var(--gk-s-dimension-m);
   }
   .wmax-l {
-    max-width: var(--gk-s-dimesion-l);
+    max-width: var(--gk-s-dimension-l);
   }
   .wmax-xl {
-    max-width: var(--gk-s-dimesion-xl);
+    max-width: var(--gk-s-dimension-xl);
   }
 
   .wmin-s {
-    min-width: var(--gk-s-dimesion-s);
+    min-width: var(--gk-s-dimension-s);
   }
   .wmin-m {
-    min-width: var(--gk-s-dimesion-m);
+    min-width: var(--gk-s-dimension-m);
   }
   .wmin-l {
-    min-width: var(--gk-s-dimesion-l);
+    min-width: var(--gk-s-dimension-l);
   }
   .wmin-xl {
-    min-width: var(--gk-s-dimesion-xl);
+    min-width: var(--gk-s-dimension-xl);
   }
 
   .w-s {
@@ -180,29 +180,29 @@ CLASSES
   }
 
   .hmax-s {
-    max-height: var(--gk-s-dimesion-s);
+    max-height: var(--gk-s-dimension-s);
   }
   .hmax-m {
-    max-height: var(--gk-s-dimesion-m);
+    max-height: var(--gk-s-dimension-m);
   }
   .hmax-l {
-    max-height: var(--gk-s-dimesion-l);
+    max-height: var(--gk-s-dimension-l);
   }
   .hmax-xl {
-    max-height: var(--gk-s-dimesion-xl);
+    max-height: var(--gk-s-dimension-xl);
   }
 
   .hmin-s {
-    min-height: var(--gk-s-dimesion-s);
+    min-height: var(--gk-s-dimension-s);
   }
   .hmin-m {
-    min-height: var(--gk-s-dimesion-m);
+    min-height: var(--gk-s-dimension-m);
   }
   .hmin-l {
-    min-height: var(--gk-s-dimesion-l);
+    min-height: var(--gk-s-dimension-l);
   }
   .hmin-xl {
-    min-height: var(--gk-s-dimesion-xl);
+    min-height: var(--gk-s-dimension-xl);
   }
 
   .h-s {
