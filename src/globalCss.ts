@@ -72,7 +72,7 @@ NORMALIZE
   label,
   div,
   p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Noto Regular", Arial, Helvetica, sans-serif;
     font-weight: normal;
     margin: 0;
   }
