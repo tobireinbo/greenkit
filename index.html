@@ -21,12 +21,24 @@
           <gk-t size="m">Lorem Ipsum</gk-t>
         </gk-card>
 
+        <gk-btn-dropdown>
+          <gk-section slot="options" size="s">
+            <gk-t size="s" clickable>test</gk-t>
+            <gk-t size="s">testdioawhido</gk-t>
+            <gk-t size="s">testdnlwkl</gk-t>
+          </gk-section>
+        </gk-btn-dropdown>
         <gk-t size="s" id="dropdown-selected">selected option: </gk-t>
-        <gk-dropdown size="m" variant="1" id="dropdown"></gk-dropdown>
+        <gk-dropdown
+          searchable
+          size="m"
+          variant="1"
+          id="dropdown"
+        ></gk-dropdown>
         <gk-btn size="m" variant="acc-1" floating shine>Pay Now</gk-btn>
       </gk-section>
       <gk-section>
-        <gk-frame title="Test" size="m">
+        <gk-frame label="Test" size="m">
           <gk-section slot="actions" direction="x" size="s">
             <gk-btn size="m" variant="acc-1">edit</gk-btn>
             <gk-btn size="m" variant="acc-1" invert>delete</gk-btn>

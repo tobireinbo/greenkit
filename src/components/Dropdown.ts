@@ -58,16 +58,16 @@ export class Dropdown extends GreenkitComponent {
     this.dispatchEvent(new CustomEvent(Dropdown.EVENTS.optionClick, options));
   }
 
-  protected handleSearchInput(e: any) {
+  private _handleSearchInput(e: any) {
     this.searchTerm = e.target.value;
   }
 
-  protected handleSearchChange(e: any) {
+  private _handleSearchChange(e: any) {
     this.searchTerm = e.target.value;
   }
 
   render() {
-    return html`<div class="rel z-2" @click=${() => (this.open = true)}>
+    return html`<div class="rel" @click=${() => (this.open = true)}>
       <input
         class="p-${this.size} onFocus_br-acc-1 t-${this.size} ${this.open
           ? `br-rt-${this.size}`
@@ -76,23 +76,24 @@ export class Dropdown extends GreenkitComponent {
         ?disabled=${!this.searchable}
         placeholder="${this.selection?.display || ""}"
         .value="${this.searchTerm}"
-        @input=${this.handleSearchInput}
+        @input=${this._handleSearchInput}
       />
-      ${this.renderOptionsList()}
+      ${this._renderOptionsList()}
     </div>`;
   }
 
-  protected renderOptionsList(): TemplateResult | null {
+  private _renderOptionsList(): TemplateResult | null {
     if (this.open) {
       return html`
         <div
           style="animation: 0.1s ease scale_blend_in_y"
-          class="flx-v w-full bg-${this.variant} brb-${this.variant} pt-${this
-            .size} pb-${this.size} brr-${this.variant} brl-${this
-            .variant} abs sdw-1 hmax-m ovfly-a br-rb-${this.size}"
+          class="z-2 flx-v w-full bg-${this.variant} brb-${this
+            .variant} pt-${this.size} pb-${this.size} brr-${this
+            .variant} brl-${this.variant} abs sdw-1 hmax-m ovfly-a br-rb-${this
+            .size}"
         >
           ${this.options
-            ? this.options.map((option) => this.renderOption(option))
+            ? this.options.map((option) => this._renderOption(option))
             : null}
         </div>
       `;
@@ -101,7 +102,7 @@ export class Dropdown extends GreenkitComponent {
     }
   }
 
-  protected renderOption(option: DisplayValue): TemplateResult | null {
+  private _renderOption(option: DisplayValue): TemplateResult | null {
     const isSelected = this.selection === option;
 
     if (

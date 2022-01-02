@@ -5,7 +5,7 @@ import { GreenkitComponent } from "../common/GreenkitComponent";
 @customElement("gk-frame")
 export class Frame extends GreenkitComponent {
   @property({ type: String })
-  title: string = "";
+  label: string = "";
 
   render() {
     return html`
@@ -14,7 +14,7 @@ export class Frame extends GreenkitComponent {
           class="p-${this.size} gap-${this
             .size} flx-btwn ovflx-a flx-ac brb-${this.variant}"
         >
-          <gk-t size="${this.size}"> ${this.title} </gk-t>
+          <gk-t size="${this.size}"> ${this.label} </gk-t>
           <slot name="actions"></slot>
         </div>
         <div class="p-${this.size}">

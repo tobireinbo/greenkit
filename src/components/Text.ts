@@ -1,11 +1,13 @@
 import { html } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 import { GreenkitComponent } from "../common/GreenkitComponent";
 
 @customElement("gk-t")
 export class Text extends GreenkitComponent {
   render() {
-    return html`<div class="t-${this.size}"><slot></slot></div>`;
+    return html`<div class="t-${this.size}">
+      <slot></slot>
+    </div>`;
   }
 }
 

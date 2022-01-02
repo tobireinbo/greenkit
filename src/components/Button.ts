@@ -9,12 +9,12 @@ export class Button extends GreenkitComponent {
   invert: boolean = false;
 
   render() {
-    return html`<button class=${this.constructClass()}>
+    return html`<button class=${this._constructClass()}>
       <slot></slot>
     </button>`;
   }
 
-  protected constructClass(): string {
+  private _constructClass(): string {
     const output = `py-${decrementSize(this.size)} br-${this.variant} t-${
       this.size
     } px-${this.size}  br-r-${this.size} click pointer`;
