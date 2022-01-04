@@ -3,7 +3,7 @@ import { customElement, property } from "lit/decorators.js";
 import { GreenkitComponent } from "../common/GreenkitComponent";
 import { decrementSize } from "../common/helper";
 
-@customElement("gk-btn")
+@customElement("gk-button")
 export class Button extends GreenkitComponent {
   @property({ type: Boolean })
   invert: boolean = false;
@@ -28,6 +28,6 @@ export class Button extends GreenkitComponent {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "gk-btn": Button;
+    "gk-button": Button;
   }
 }

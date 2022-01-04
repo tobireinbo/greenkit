@@ -2,7 +2,7 @@ import { html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { GreenkitComponent } from "../common/GreenkitComponent";
 
-@customElement("gk-t")
+@customElement("gk-text")
 export class Text extends GreenkitComponent {
   render() {
     return html`<div class="t-${this.size}">
@@ -13,6 +13,6 @@ export class Text extends GreenkitComponent {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "gk-t": Text;
+    "gk-text": Text;
   }
 }
