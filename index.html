@@ -20,10 +20,10 @@
         <gk-button-dropdown floatToLeft>
           <gk-container slot="options" size="s">
             <a href="https://github.com/tobireinbo" target="_blank">
-              <gk-text size="s" clickable>github</gk-text>
+              <gk-text size="m" clickable>github</gk-text>
             </a>
-            <gk-text size="s">projects</gk-text>
-            <gk-text size="s">work</gk-text>
+            <gk-text size="m">projects</gk-text>
+            <gk-text size="m">work</gk-text>
           </gk-container>
           <div
             slot="button"
@@ -84,6 +84,7 @@
           </gk-section>
         </gk-frame>
       </gk-section>
+      <gk-table id="table" size="s" variant="1" />
     </gk-container>
 
     <script>
@@ -104,6 +105,25 @@
           data?.detail?.option?.display || "-"
         }`;
       });
+
+      const table = document.getElementById("table");
+      table.columns = [
+        { display: "Name", value: "name" },
+        { display: "Birthday", value: "birthday" },
+        { display: "City", value: "city" },
+      ];
+      table.rows = [
+        {
+          name: { display: "Tobias Reinbold", value: "tr001" },
+          birthday: { display: "15.01.1999", value: "147210947902140912" },
+          city: { display: "New York", value: "j3iji1" },
+        },
+        {
+          name: { display: "Tobias Reinbold", value: "tr001" },
+          birthday: { display: "15.01.1999", value: "147210947902140912" },
+          city: { display: "New York", value: "j3iji1" },
+        },
+      ];
     </script>
   </body>
 </html>

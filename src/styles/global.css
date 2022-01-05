@@ -539,6 +539,18 @@ CLASSES
 .br-acc-1 {
   border: solid 1px var(--gk-c-accent-1);
 }
+.brb-acc-1 {
+  border-bottom: solid 1px var(--gk-c-accent-1);
+}
+.brr-acc-1 {
+  border-right: solid 1px var(--gk-c-accent-1);
+}
+.brl-acc-1 {
+  border-left: solid 1px var(--gk-c-accent-1);
+}
+.brt-acc-1 {
+  border-top: solid 1px var(--gk-c-accent-1);
+}
 
 .onFocus_br-acc-1:focus {
   border: solid 1px var(--gk-c-accent-1);
@@ -654,6 +666,10 @@ CLASSES
   color: var(--gk-c-text-in-accent-1);
 }
 .bg-acc-1 > * {
+  color: var(--gk-c-text-in-accent-1);
+}
+.bg-acc-1-focus {
+  background: var(--gk-c-accent-1-focus);
   color: var(--gk-c-text-in-accent-1);
 }
 .bg-acc-1_hvr {
