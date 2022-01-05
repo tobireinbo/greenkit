@@ -1,4 +1,5 @@
-import "./fonts.css";
+import "./styles/fonts.css";
+import "./styles/variables.css";
 
 import "./components/Container";
 import "./components/Card";

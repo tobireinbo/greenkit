@@ -14,7 +14,7 @@ export class Frame extends GreenkitComponent {
           class="p-${this.size} gap-${this
             .size} flx-btwn ovflx-a flx-ac brb-${this.variant}"
         >
-          <gk-t size="${this.size}"> ${this.label} </gk-t>
+          <gk-text size="${this.size}"> ${this.label} </gk-text>
           <slot name="actions"></slot>
         </div>
         <div class="p-${this.size}">

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit App</title>
-    <link rel="stylesheet" type="text/css" href="variables.css" />
+    <link rel="stylesheet" type="text/css" href="dist/style.css" />
+
     <link />
     <style>
       body {
@@ -15,19 +16,29 @@
   </head>
   <body>
     <gk-container size="l">
+      <div class="ml-a flx-no-stretch">
+        <gk-button-dropdown floatToLeft>
+          <gk-container slot="options" size="s">
+            <a href="https://github.com/tobireinbo" target="_blank">
+              <gk-text size="s" clickable>github</gk-text>
+            </a>
+            <gk-text size="s">projects</gk-text>
+            <gk-text size="s">work</gk-text>
+          </gk-container>
+          <div
+            slot="button"
+            class="bg-1_hvr pointer br-r-circ w-l flx-c-c h-l onFocus_bg-2"
+          >
+            <i class="icon-menu t-m"></i>
+          </div>
+        </gk-button-dropdown>
+      </div>
       <gk-section>
         <gk-card borderless variant="2" size="m">
-          <gk-text size="xl">Hello World</gk-text>
+          <gk-text size="xl"><i class="icon-home"></i> Hello World</gk-text>
           <gk-text size="m">Lorem Ipsum</gk-text>
         </gk-card>
 
-        <gk-button-dropdown>
-          <gk-section slot="options" size="s">
-            <gk-text size="s" clickable>test</gk-text>
-            <gk-text size="s">testdioawhido</gk-text>
-            <gk-text size="s">testdnlwkl</gk-text>
-          </gk-section>
-        </gk-button-dropdown>
         <gk-text size="s" id="dropdown-selected">selected option: </gk-text>
         <gk-dropdown
           searchable
@@ -86,9 +97,12 @@
       dropdown.options = options;
 
       dropdown.addEventListener("optionClick", (data) => {
+        console.log(data);
         document.getElementById(
           "dropdown-selected"
-        ).innerText = `selected option: ${data.detail.option.display}`;
+        ).innerText = `selected option: ${
+          data?.detail?.option?.display || "-"
+        }`;
       });
     </script>
   </body>

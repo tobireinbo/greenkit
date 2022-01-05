@@ -1,5 +1,5 @@
 import { html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement } from "lit/decorators.js";
 import { GreenkitComponent } from "../common/GreenkitComponent";
 
 @customElement("gk-text")

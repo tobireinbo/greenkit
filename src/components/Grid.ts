@@ -1,13 +1,13 @@
-import { css, html } from "lit";
+import { css, html, unsafeCSS } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { GreenkitComponent } from "../common/GreenkitComponent";
 import { Size } from "../common/types";
-import globalCss from "../globalCss";
+import globalCss from "../styles/global.css";
 
 @customElement("gk-grid")
 export class Grid extends GreenkitComponent {
   static styles = [
-    globalCss,
+    unsafeCSS(globalCss),
     css`
       :host div {
         display: grid;

@@ -2,10 +2,12 @@ import { html, TemplateResult } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { GreenkitComponent } from "../common/GreenkitComponent";
 
-@customElement("gk-btn-dropdown")
+@customElement("gk-button-dropdown")
 export class DropdownButton extends GreenkitComponent {
   @property({ type: Boolean })
   open = false;
+  @property({ type: Boolean })
+  floatToLeft?: boolean = false;
 
   connectedCallback() {
     super.connectedCallback();
@@ -37,7 +39,9 @@ export class DropdownButton extends GreenkitComponent {
       return html` <div
         style="animation: 0.1s ease scale_blend_in_y"
         class="z-2 flx-v bg-${this.variant} br-${this.variant} pt-${this
-          .size} pb-${this.size} abs sdw-1 hmax-m ovfly-a br-r-${this.size}"
+          .size} pb-${this.size} abs ${this.floatToLeft
+          ? "right-0"
+          : "left-0"} sdw-1 hmax-m ovfly-a br-r-${this.size}"
       >
         <slot name="options"></slot>
       </div>`;
@@ -49,6 +53,6 @@ export class DropdownButton extends GreenkitComponent {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "gk-btn-dropdown": DropdownButton;
+    "gk-button-dropdown": DropdownButton;
   }
 }

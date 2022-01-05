@@ -1,10 +1,16 @@
-import { LitElement } from "lit";
+import { LitElement, unsafeCSS } from "lit";
 import { property } from "lit/decorators.js";
 import { Size, Variant } from "../common/types";
-import globalCss from "../globalCss";
+import icons from "../styles/icons.css";
+import globals from "../styles/global.css";
 
 export class GreenkitComponent extends LitElement {
-  static styles = [globalCss];
+  static styles = [unsafeCSS(globals), unsafeCSS(icons)];
+  constructor() {
+    super();
+
+    console.log();
+  }
 
   @property()
   size: Size = "m";

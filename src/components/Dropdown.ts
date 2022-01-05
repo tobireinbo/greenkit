@@ -44,7 +44,13 @@ export class Dropdown extends GreenkitComponent {
     }
   };
 
-  private _dispatchOptionSelect(_: Event, option: DisplayValue) {
+  private _handleClearClick(e: Event) {
+    e.stopPropagation();
+    this.selection = undefined;
+    this._dispatchOptionSelect(e, undefined);
+  }
+
+  private _dispatchOptionSelect(_: Event, option: DisplayValue | undefined) {
     this.selection = option;
     this.searchTerm = "";
     if (this.closeOnSelect) {
@@ -62,12 +68,8 @@ export class Dropdown extends GreenkitComponent {
     this.searchTerm = e.target.value;
   }
 
-  private _handleSearchChange(e: any) {
-    this.searchTerm = e.target.value;
-  }
-
   render() {
-    return html`<div class="rel" @click=${() => (this.open = true)}>
+    return html`<div class="rel " @click=${() => (this.open = true)}>
       <input
         class="p-${this.size} onFocus_br-acc-1 t-${this.size} ${this.open
           ? `br-rt-${this.size}`
@@ -78,8 +80,21 @@ export class Dropdown extends GreenkitComponent {
         .value="${this.searchTerm}"
         @input=${this._handleSearchInput}
       />
-      ${this._renderOptionsList()}
+      ${this._renderClearButton()} ${this._renderOptionsList()}
     </div>`;
+  }
+
+  private _renderClearButton(): TemplateResult | null {
+    if (this.selection) {
+      return html`<div
+        @click=${this._handleClearClick}
+        class="br-r-circ flx-c-c bg-2_hvr abs pointer right-s w-m h-m"
+        style="top: 50%; transform: translateY(-50%)"
+      >
+        <i class="icon-cross t-xs"></i>
+      </div>`;
+    }
+    return null;
   }
 
   private _renderOptionsList(): TemplateResult | null {
@@ -97,9 +112,8 @@ export class Dropdown extends GreenkitComponent {
             : null}
         </div>
       `;
-    } else {
-      return null;
     }
+    return null;
   }
 
   private _renderOption(option: DisplayValue): TemplateResult | null {

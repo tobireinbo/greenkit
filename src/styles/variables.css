@@ -32,7 +32,7 @@ VARIABLES
   --gk-c-text-in-hint: white;
 
   /* Sizes */
-  --gk-s-text-xs: 13px;
+  --gk-s-text-xs: 8px;
   --gk-s-text-s: 16px;
   --gk-s-text-m: 20px;
   --gk-s-text-l: 30px;
@@ -44,7 +44,7 @@ VARIABLES
   --gk-s-spacing-xl: 50px;
 
   --gk-s-s: 10px;
-  --gk-s-m: 20px;
+  --gk-s-m: 24px;
   --gk-s-l: 40px;
   --gk-s-xl: 60px;
 
@@ -76,7 +76,7 @@ VARIABLES
     --gk-s-l: 30px;
     --gk-s-xl: 48px;
 
-    --gk-s-text-xs: 10px;
+    --gk-s-text-xs: 6px;
     --gk-s-text-s: 12px;
     --gk-s-text-m: 18px;
     --gk-s-text-l: 30px;
