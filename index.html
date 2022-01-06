@@ -18,13 +18,26 @@
     <gk-container size="l">
       <div class="ml-a flx-no-stretch">
         <gk-button-dropdown floatToLeft>
-          <gk-container slot="options" size="s">
-            <a href="https://github.com/tobireinbo" target="_blank">
-              <gk-text size="m" clickable>github</gk-text>
+          <div slot="options" class="flx-v wmin-s">
+            <a
+              href="https://github.com/tobireinbo"
+              class="bg-1_hvr p-s"
+              target="_blank"
+            >
+              <gk-text size="s" clickable>
+                <i class="icon-github"></i> github</gk-text
+              >
             </a>
-            <gk-text size="m">projects</gk-text>
-            <gk-text size="m">work</gk-text>
-          </gk-container>
+            <a
+              href="https://github.com/tobireinbo"
+              class="bg-1_hvr p-s"
+              target="_blank"
+            >
+              <gk-text size="s" variant="acc-1"
+                ><i class="icon-stack"></i> projects</gk-text
+              >
+            </a>
+          </div>
           <div
             slot="button"
             class="bg-1_hvr pointer br-r-circ w-l flx-c-c h-l onFocus_bg-2"
@@ -35,14 +48,14 @@
       </div>
       <gk-section>
         <gk-card borderless variant="2" size="m">
-          <gk-text size="xl"><i class="icon-home"></i> Hello World</gk-text>
+          <gk-text size="xl">👋 Hello World</gk-text>
           <gk-text size="m">Lorem Ipsum</gk-text>
         </gk-card>
 
         <gk-text size="s" id="dropdown-selected">selected option: </gk-text>
         <gk-dropdown
           searchable
-          size="m"
+          size="s"
           variant="1"
           id="dropdown"
         ></gk-dropdown>
@@ -89,7 +102,13 @@
 
     <script>
       const dropdown = document.getElementById("dropdown");
-      const options = [{ display: "Hallo", value: "hdp2k3d3k2o" }];
+      const options = [
+        {
+          display: "ABC...",
+          value: "hdp2k3d3k2o",
+          search: "abcdefghijklmnopqrstuvwxyzüöä",
+        },
+      ];
 
       for (let i = 0; i < 100; i++) {
         options.push({ display: String(i), value: i });

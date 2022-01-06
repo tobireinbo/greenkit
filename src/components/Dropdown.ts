@@ -119,8 +119,23 @@ export class Dropdown extends GreenkitComponent {
   private _renderOption(option: DisplayValue): TemplateResult | null {
     const isSelected = this.selection === option;
 
+    /*
+    NOTE: display only works with string for now,
+          so the search term will always pick the search
+          or display field
+
+    search term prio:
+
+    1.    if a search field is given, use it as search term
+    2.    otherwise if display field is a string, use it "
+    3.    otherwise use value field
+    */
+    const optionSearchTerm =
+      option.search ||
+      (typeof option.display === "string" ? option.display : option.value);
+
     if (
-      option.display
+      optionSearchTerm
         .toLowerCase()
         .includes(this.searchTerm?.toLocaleLowerCase() || "") ||
       isSelected

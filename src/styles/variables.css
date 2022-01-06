@@ -14,9 +14,9 @@ VARIABLES
   --gk-c-hint: yellow;
   --gk-c-hint-focus: yellow;
   --gk-c-area-1: hsl(0, 0%, 100%);
-  --gk-c-area-1-focus: hsl(0, 0%, 92%);
-  --gk-c-area-2: hsl(0, 0%, 92%);
-  --gk-c-area-2-focus: hsl(0, 0%, 88%);
+  --gk-c-area-1-focus: hsl(0, 0%, 94%);
+  --gk-c-area-2: hsl(0, 0%, 94%);
+  --gk-c-area-2-focus: hsl(0, 0%, 90%);
   --gk-c-contour-1: hsl(0, 0%, 88%);
   --gk-c-contour-1-focus: hsl(0, 0%, 84%);
   --gk-c-contour-2: hsl(0, 0%, 80%);
@@ -53,8 +53,8 @@ VARIABLES
   --gk-s-dimension-l: 800px;
   --gk-s-dimension-xl: 1200px;
 
-  --gk-s-radius-s: 2px;
-  --gk-s-radius-m: 4px;
+  --gk-s-radius-s: 4px;
+  --gk-s-radius-m: 6px;
   --gk-s-radius-l: 10px;
   --gk-s-radius-xl: 15px;
 

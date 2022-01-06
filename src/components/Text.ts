@@ -5,7 +5,7 @@ import { GreenkitComponent } from "../common/GreenkitComponent";
 @customElement("gk-text")
 export class Text extends GreenkitComponent {
   render() {
-    return html`<div class="t-${this.size} t-c-in-${this.variant}">
+    return html`<div class="t-${this.size} t-c-${this.variant}">
       <slot></slot>
     </div>`;
   }
