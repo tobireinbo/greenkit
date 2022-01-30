@@ -6,13 +6,12 @@
     <title>Vite + Lit App</title>
     <link rel="stylesheet" type="text/css" href="dist/style.css" />
 
-    <link />
+    <script type="module" src="dist/greenkit.es.js"></script>
     <style>
       body {
         margin: 0;
       }
     </style>
-    <script type="module" src="/src/index.ts"></script>
   </head>
   <body>
     <gk-container size="l">
@@ -42,34 +41,39 @@
             slot="button"
             class="bg-1_hvr pointer br-r-circ w-l flx-c-c h-l onFocus_bg-2"
           >
-            <i class="icon-menu t-m"></i>
+            <i class="pixel-icon-stack t-m"></i>
           </div>
         </gk-button-dropdown>
       </div>
       <gk-section>
         <gk-card borderless variant="2" size="m">
-          <gk-text size="xl">👋 Hello World</gk-text>
+          <gk-text size="xl"
+            ><b
+              ><i class="pixel-icon-prank t-c-acc-1"></i> Hello World</b
+            ></gk-text
+          >
           <gk-text size="m">Lorem Ipsum</gk-text>
         </gk-card>
-
         <gk-text size="s" id="dropdown-selected">selected option: </gk-text>
         <gk-dropdown
           searchable
-          size="s"
+          size="m"
           variant="1"
           id="dropdown"
         ></gk-dropdown>
-        <gk-button size="m" variant="acc-1" floating shine>Pay Now</gk-button>
+        <gk-button id="modal-btn" size="m" variant="acc-1" floating shine
+          >Pay Now</gk-button
+        >
       </gk-section>
       <gk-section>
         <gk-frame label="Test" size="m">
           <gk-section slot="actions" direction="x" size="s">
-            <gk-button size="m" variant="acc-1">edit</gk-button>
-            <gk-button size="m" variant="acc-1" invert>delete</gk-button>
+            <gk-button size="s" variant="acc-1">edit</gk-button>
+            <gk-button size="s" variant="acc-1" invert>delete</gk-button>
           </gk-section>
           <gk-section slot="content">
-            <gk-text size="s"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            <gk-text size="s">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
@@ -116,7 +120,7 @@
 
       dropdown.options = options;
 
-      dropdown.addEventListener("optionClick", (data) => {
+      dropdown.addEventListener("gk.option.click", (data) => {
         console.log(data);
         document.getElementById(
           "dropdown-selected"
@@ -124,6 +128,35 @@
           data?.detail?.option?.display || "-"
         }`;
       });
+
+      document
+        .getElementById("modal-btn")
+        .addEventListener("click", modalEvent);
+
+      function modalEvent() {
+        const modal = document.createElement("gk-modal");
+        modal.id = "modal";
+        modal.closeOnOutsideClick = true;
+        modal.innerHTML = `<gk-container size="m" width="m">
+                            <gk-card floating>
+                              <gk-text size="m">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                              </gk-text>
+                              <gk-button id="modal-close-btn" variant="2">Close</gk-button>
+                            </gk-card>
+                          </gk-container>`;
+        document.body.appendChild(modal);
+
+        document
+          .getElementById("modal-close-btn")
+          .addEventListener("click", modalCloseEvent);
+      }
+
+      function modalCloseEvent() {
+        const modal = document.getElementById("modal");
+        modal.parentElement.removeChild(modal);
+      }
 
       const table = document.getElementById("table");
       table.columns = [

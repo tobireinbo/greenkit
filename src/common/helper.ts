@@ -1,6 +1,6 @@
-import { Size } from "./types";
+import { ChangableSize, Size } from "./types";
 
-export function decrementSize(size: Size): Size {
+export function decrementSize(size: Size): ChangableSize {
   switch (size) {
     case "xl":
       return "l";
@@ -9,22 +9,22 @@ export function decrementSize(size: Size): Size {
     case "m":
       return "s";
     case "s":
-      return "0";
+      return "xs";
     case "0":
       return "0";
   }
 }
 
-export function incrementSize(size: Size): Size {
+export function incrementSize(size: Size): ChangableSize {
   switch (size) {
     case "m":
       return "l";
     case "s":
-      return "0";
+      return "m";
     case "l":
       return "xl";
     case "xl":
-      return "xl";
+      return "xxl";
     case "0":
       return "s";
   }

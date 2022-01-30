@@ -68,11 +68,16 @@ a,
 span,
 input,
 label,
+button,
 div,
 p {
-  font-family: "Noto Regular", Arial, Helvetica, sans-serif;
+  font-family: "Source Code Pro", Arial, Helvetica, sans-serif;
   font-weight: normal;
   margin: 0;
+}
+
+b {
+  font-weight: bold;
 }
 
 /*
@@ -142,6 +147,9 @@ CLASSES
 .wmax-xl {
   max-width: var(--gk-s-dimension-xl);
 }
+.wmax-full {
+  max-width: 100%;
+}
 
 .wmin-s {
   min-width: var(--gk-s-dimension-s);
@@ -189,6 +197,9 @@ CLASSES
 .hmax-xl {
   max-height: var(--gk-s-dimension-xl);
 }
+.hmax-full {
+  max-height: 100%;
+}
 
 .hmin-s {
   min-height: var(--gk-s-dimension-s);
@@ -234,6 +245,10 @@ CLASSES
   top: 0;
 }
 
+.inset-0 {
+  inset: 0;
+}
+
 .top-0 {
   top: 0;
 }
@@ -257,6 +272,42 @@ CLASSES
 }
 .bottom-s {
   bottom: var(--gk-s-spacing-s);
+}
+.top-m {
+  top: var(--gk-s-spacing-m);
+}
+.right-m {
+  right: var(--gk-s-spacing-m);
+}
+.left-m {
+  left: var(--gk-s-spacing-m);
+}
+.bottom-m {
+  bottom: var(--gk-s-spacing-m);
+}
+.top-l {
+  top: var(--gk-s-spacing-l);
+}
+.right-l {
+  right: var(--gk-s-spacing-l);
+}
+.left-l {
+  left: var(--gk-s-spacing-l);
+}
+.bottom-l {
+  bottom: var(--gk-s-spacing-l);
+}
+.top-xl {
+  top: var(--gk-s-spacing-xl);
+}
+.right-xl {
+  right: var(--gk-s-spacing-xl);
+}
+.left-xl {
+  left: var(--gk-s-spacing-xl);
+}
+.bottom-xl {
+  bottom: var(--gk-s-spacing-xl);
 }
 
 /* Display */
@@ -326,6 +377,10 @@ CLASSES
 }
 .z-100 {
   z-index: 100;
+}
+
+.z-ceil {
+  z-index: var(--gk-z-ceil);
 }
 
 /* Text */
@@ -620,6 +675,12 @@ CLASSES
 .sdw-2 {
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
 }
+.sdw-notch-1 {
+  box-shadow: 0px 2px var(--gk-c-contour-1);
+}
+.sdw-notch-2 {
+  box-shadow: 0px 2px var(--gk-c-contour-2);
+}
 .sdw-shine {
   box-shadow: inset 1px 1px 1px 0 hsla(0, 0%, 100%, 0.61);
 }
@@ -768,6 +829,9 @@ CLASSES
 .p-0 {
   padding: 0 !important;
 }
+.p-xs {
+  padding: var(--gk-s-spacing-xs);
+}
 .p-s {
   padding: var(--gk-s-spacing-s);
 }
@@ -865,6 +929,9 @@ CLASSES
 
 .m-0 {
   margin: unset !important;
+}
+.m-xs {
+  margin: var(--gk-s-spacing-xs);
 }
 .m-s {
   margin: var(--gk-s-spacing-s);

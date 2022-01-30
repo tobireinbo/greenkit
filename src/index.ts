@@ -1,8 +1,6 @@
 import "./styles/fonts.css";
 import "./styles/variables.css";
 
-import { html } from "lit";
-
 import "./components/Container";
 import "./components/Card";
 import "./components/Text";
@@ -13,3 +11,4 @@ import "./components/Frame";
 import "./components/Grid";
 import "./components/DropdownButton";
 import "./components/Table";
+import "./components/Modal";

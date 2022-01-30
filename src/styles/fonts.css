@@ -7,3 +7,9 @@
   font-family: "Noto Bold";
   src: url(fonts/NotoSans/NotoSans-Bold.ttf) format("truetype");
 }
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url(fonts/SourceCodePro/SourceCodePro-VariableFont_wght.ttf)
+    format("truetype");
+}

@@ -21,9 +21,9 @@ VARIABLES
   --gk-c-contour-1-focus: hsl(0, 0%, 84%);
   --gk-c-contour-2: hsl(0, 0%, 80%);
   --gk-c-contour-2-focus: hsl(0, 0%, 76%);
-  --gk-c-text-xs: black;
-  --gk-c-text-s: black;
-  --gk-c-text-m: black;
+  --gk-c-text-xs: #474747;
+  --gk-c-text-s: #474747;
+  --gk-c-text-m: #242424;
   --gk-c-text-l: black;
   --gk-c-text-xl: black;
   --gk-c-text-in-accent-1: white;
@@ -31,13 +31,19 @@ VARIABLES
   --gk-c-text-in-warn: white;
   --gk-c-text-in-hint: white;
 
+  --gk-z-floor: 0;
+  --gk-z-above-floor: 1;
+  --gk-z-below-ceil: 99;
+  --gk-z-ceil: 100;
+
   /* Sizes */
   --gk-s-text-xs: 8px;
-  --gk-s-text-s: 16px;
+  --gk-s-text-s: 12px;
   --gk-s-text-m: 20px;
   --gk-s-text-l: 30px;
   --gk-s-text-xl: 60px;
 
+  --gk-s-spacing-xs: 4px;
   --gk-s-spacing-s: 8px;
   --gk-s-spacing-m: 14px;
   --gk-s-spacing-l: 30px;
@@ -53,10 +59,10 @@ VARIABLES
   --gk-s-dimension-l: 800px;
   --gk-s-dimension-xl: 1200px;
 
-  --gk-s-radius-s: 4px;
-  --gk-s-radius-m: 6px;
-  --gk-s-radius-l: 10px;
-  --gk-s-radius-xl: 15px;
+  --gk-s-radius-s: 2px;
+  --gk-s-radius-m: 4px;
+  --gk-s-radius-l: 8px;
+  --gk-s-radius-xl: 12px;
 
   /* Transitions */
   --gk-t-fast: 0.3s ease;

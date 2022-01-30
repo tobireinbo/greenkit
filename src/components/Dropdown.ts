@@ -6,8 +6,8 @@ import { DisplayValue } from "../common/types";
 @customElement("gk-dropdown")
 export class Dropdown extends GreenkitComponent {
   static EVENTS = {
-    optionClick: "optionClick",
-    selectionChange: "selectionChange",
+    optionClick: "gk.option.click",
+    selectionChange: "gk.selection.change",
   };
 
   @property()
@@ -88,10 +88,10 @@ export class Dropdown extends GreenkitComponent {
     if (this.selection) {
       return html`<div
         @click=${this._handleClearClick}
-        class="br-r-circ flx-c-c bg-2_hvr abs pointer right-s w-m h-m"
+        class="br-r-circ flx-c-c bg-2_hvr abs pointer right-${this.size} "
         style="top: 50%; transform: translateY(-50%)"
       >
-        <i class="icon-cross t-xs"></i>
+        <i class="pixel-icon-forbid t-${this.size}"></i>
       </div>`;
     }
     return null;
@@ -147,7 +147,7 @@ export class Dropdown extends GreenkitComponent {
         class="p-${this.size} t-${this.size} ${isSelected
           ? "t-c-acc-1"
           : ""}  pointer ${isSelected
-          ? `bg-${this.variant}-focus sdw-1 brt-${this.variant} brb-${this.variant} stky top-0 bottom-0`
+          ? `bg-${this.variant}-focus sdw-1 brt-${this.variant} brb-${this.variant}`
           : `bg-${this.variant}_hvr`}"
         @click=${(e: Event) => {
           e.stopPropagation();
